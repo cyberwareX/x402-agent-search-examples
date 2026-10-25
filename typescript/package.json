@@ -1,0 +1,6 @@
+{
+  "name": "x402-agent-search-example",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@x402/evm": "^2", "@x402/fetch": "^2", "viem": "^2" }
+}
