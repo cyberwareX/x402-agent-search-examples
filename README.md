@@ -1,6 +1,6 @@
 # x402 agent search examples
 
-**CyberWareX: web search and web page reading for AI agents, paid per call in USDC with x402. No account, no API key.**
+**CyberWareX: web search, web page reading and token safety checks for AI agents, paid per call in USDC with x402. No account, no API key.**
 
 Copy-paste examples that give an AI agent live web search and page reading. The agent pays for each
 call from its own wallet with [x402](https://x402.org) (USDC on Base). There is no signup, no key to
@@ -64,7 +64,7 @@ counted on 2026-10-25. An Exa-shaped `POST /v1/search` ($0.005) and `/v1/content
 ## Machine-readable
 
 - Catalog for agents: https://cyberwarex.com/llms.txt and https://cyberwarex.com/.well-known/x402
-- Plain answers to common questions: https://cyberwarex.com/answers
+- Plain answers to common questions: https://cyberwarex.com/answers (for example https://cyberwarex.com/answers/x402-search-api-example)
 - Contact: x402@cyberwarex.com
 
 MIT license.
