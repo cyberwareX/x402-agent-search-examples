@@ -6,9 +6,10 @@ import sys
 import urllib.request
 
 ENDPOINTS = [
-    ("https://search.cyberwarex.com/search?q=test", 3000),
+    ("https://search.cyberwarex.com/search?q=test", 4350),
     ("https://search.cyberwarex.com/search-contents?q=test", 6000),
     ("https://web.cyberwarex.com/fetch?url=https://example.com", 1000),
+    ("https://oracle.cyberwarex.com/risk/explain?chain=base&address=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", 5000),
 ]
 
 

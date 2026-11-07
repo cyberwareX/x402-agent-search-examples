@@ -8,14 +8,14 @@ leak, and no monthly plan. The payment is gasless for the payer: the wallet only
 
 | Folder | What it is |
 |---|---|
-| [python](python) | `search.py` and `read_page.py`, plain `requests` |
+| [python](python) | `search.py` and `read_page.py`, plain `requests`; `trade_gate.py`: pay $0.005 for a token safety check, then buy, buy small or skip |
 | [typescript](typescript) | `search.mjs` with `@x402/fetch` |
 | [langchain](langchain) | `web_search` and `read_page` tools for LangChain or LangGraph |
 | [crewai](crewai) | `CyberwarexSearch` tool for a crew |
 | [claude-code](claude-code) | a skill plus a tiny CLI (`cwx.py`) Claude Code runs |
 | [cursor](cursor) | a Cursor rule that uses the same CLI |
 
-Every example here was run against the live service with a real paid call on 2026-10-25.
+Every example here was run against the live service with a real paid call (2026-10-25; trade_gate.py on 2026-11-07).
 
 ## Try it with no wallet first
 
@@ -46,12 +46,14 @@ print(r.json()["results"])
 
 | Call | Price | Median time | 90% of calls under |
 |---|---|---|---|
-| `GET search.cyberwarex.com/search` | $0.003 | 2.0 s | 3.1 s |
+| `GET search.cyberwarex.com/search` | $0.00435 | 2.0 s | 3.1 s |
 | `GET search.cyberwarex.com/search-contents` (results plus page text) | $0.006 | 7.3 s | 10.2 s |
 | `GET web.cyberwarex.com/fetch` (page as markdown, JavaScript rendered) | $0.001 | 5.0 s | 16.6 s |
 
-Times are from our own server logs of successful calls (1,146 searches, 1,191 search-contents, 8,295 page reads),
-counted on 2026-10-25. An Exa-shaped `POST /v1/search` ($0.005) and `/v1/contents` also exist for code already written for Exa.
+| `GET oracle.cyberwarex.com/risk/explain` (token safety: ALLOW, LIMIT, RECHECK or BLOCK) | $0.005 | 1.5 s | 8.6 s (95%) |
+
+Search, search-contents and fetch times are from our own server logs of successful calls (1,146 searches, 1,191 search-contents, 8,295 page reads),
+counted on 2026-10-25. Token safety times: the service's own 7-day count of 175 answers, read 2026-11-07. Search price re-read off the live quote 2026-11-07. An Exa-shaped `POST /v1/search` ($0.005) and `/v1/contents` also exist for code already written for Exa.
 
 ## Use something else when
 

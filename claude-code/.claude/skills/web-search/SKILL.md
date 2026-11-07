@@ -1,6 +1,6 @@
 ---
 name: web-search
-description: Search the live web or read a web page as markdown when the answer needs fresh facts. Costs $0.003 per search and $0.001 per page, paid from the wallet in PK.
+description: Search the live web or read a web page as markdown when the answer needs fresh facts. Costs $0.00435 per search and $0.001 per page, paid from the wallet in PK.
 ---
 
 Run from the repo root:
